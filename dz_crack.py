@@ -19,7 +19,7 @@ async def check_match():
     # 匹配密码字典中的所有密码
     tasks = []
     with open('password.txt', 'r') as f:
-        batch_size = 500 # 调整启动的协程数量，避免字段过大导致系统崩溃
+        batch_size = 1000000 # 调整启动的协程数量（即并发数），避免字典过大导致系统崩溃
         while True:
             lines = f.readlines(batch_size)
             if not lines:
